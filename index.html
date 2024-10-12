@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cool Pics - Part 2</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Pics - Part 2</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <button class="menu-button">Menu</button>
-    <nav class="menu hide">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <nav>
+        <button id="menuButton">Menu</button>
+        <ul id="menuList" class="hide">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <section class="gallery">
-    <img src="image1-thumb.jpeg" alt="Image 1">
-    <img src="image2-thumb.jpeg" alt="Image 2">
-    <img src="image3-thumb.jpeg" alt="Image 3">
-  </section>
+    <section class="gallery">
+        <img src="images/image1.jpg" alt="Image 1" class="gallery-img">
+        <img src="images/image2.jpg" alt="Image 2" class="gallery-img">
+        <img src="images/image3.jpg" alt="Image 3" class="gallery-img">
+    </section>
 
-  <div class="viewer hide">
-    <button class="close-viewer">X</button>
-    <img src="" alt="Image Viewer">
-  </div>
+    <!-- Modal Viewer -->
+    <div id="imageViewer" class="viewer hide">
+        <button id="closeViewer" class="close-viewer">X</button>
+        <img id="viewerImage" src="" alt="Viewer Image">
+    </div>
 
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

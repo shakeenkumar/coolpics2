@@ -1,44 +1,37 @@
-// Menu toggle
-const menuButton = document.querySelector('.menu-button');
-const menu = document.querySelector('.menu');
+// Handle Menu Toggle
+const menuButton = document.getElementById('menuButton');
+const menuList = document.getElementById('menuList');
 
 menuButton.addEventListener('click', () => {
-  menu.classList.toggle('hide');
+    menuList.classList.toggle('hide');
 });
 
-// Handle window resize
-function handleResize() {
-  const windowWidth = window.innerWidth;
-  if (windowWidth > 1000) {
-    menu.classList.remove('hide');
-  } else {
-    menu.classList.add('hide');
-}
+// Handle Window Resize
+const handleResize = () => {
+    if (window.innerWidth > 1000) {
+        menuList.classList.remove('hide');
+    } else {
+        menuList.classList.add('hide');
+    }
+};
 
 window.addEventListener('resize', handleResize);
-handleResize();
+handleResize();  // Call it on load as well
 
-// Image viewer modal
-const viewer = document.querySelector('.viewer');
-const closeButton = document.querySelector('.close-viewer');
-const viewerImage = viewer.querySelector('img');
+// Handle Image Viewer
+const galleryImages = document.querySelectorAll('.gallery-img');
+const imageViewer = document.getElementById('imageViewer');
+const viewerImage = document.getElementById('viewerImage');
+const closeViewer = document.getElementById('closeViewer');
 
-// Function to handle image click
-function viewHandler(event) {
-  const target = event.target;
-  
-  if (target.tagName === 'IMG') {
-    const imgSrc = target.src.split('-')[0] + '-full.jpeg';
-    viewerImage.src = imgSrc;
-    viewer.classList.remove('hide');
-  }
-}
+galleryImages.forEach(image => {
+    image.addEventListener('click', (event) => {
+        const imagePath = event.target.src;
+        viewerImage.src = imagePath;
+        imageViewer.classList.remove('hide');
+    });
+});
 
-// Close the viewer when X is clicked
-function closeViewer() {
-  viewer.classList.add('hide');
-}
-
-// Add event listeners
-document.querySelector('.gallery').addEventListener('click', viewHandler);
-closeButton.addEventListener('click', closeViewer);
+closeViewer.addEventListener('click', () => {
+    imageViewer.classList.add('hide');
+});

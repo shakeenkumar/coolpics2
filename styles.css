@@ -1,82 +1,50 @@
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.hide {
+  display: none;
+}
+
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.viewer img {
+  max-height: 100%;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 1.5em;
+}
+
+#menuList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menuButton {
+  display: block;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1000px) {
+  #menuButton {
+      display: none;
   }
-  
-  header {
-    background-color: #333;
-    padding: 1rem;
-    color: white;
+
+  #menuList {
+      display: block;
   }
-  
-  .menu-button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .menu a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Hide class to hide elements */
-  .hide {
-    display: none;
-  }
-  
-  /* Gallery styling */
-  .gallery {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-  }
-  
-  .gallery img {
-    max-width: 150px;
-    cursor: pointer;
-  }
-  
-  /* Modal viewer styling */
-  .viewer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: grid;
-    place-items: center;
-    z-index: 10;
-  }
-  
-  .viewer img {
-    max-height: 100%;
-  }
-  
-  .viewer .close-viewer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: white;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
+}
